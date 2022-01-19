@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Vue JS Home</title>
+
+    <style>
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .border {
+            border: 1px solid ;
+        }
+
+        .div-main {
+            width: 200px;
+            height: 200px;
+        }
+
+        .div-aux {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="inputTexto">
+        <br>
+        <select id="opcoes">
+            <option value="A">OPC 1</option>
+            <option value="B">OPC 2</option>
+            <option value="C">OPC 3</option>
+        </select>
+        <button @click="clickButton()">Botão</button>
+        <hr>
+        <!-- <a href="https://globo.com"
+            target="_new"
+            @click.prevent="previnirComportamentoPadrao()"
+        >
+        Link de acesso
+        </a> 
+        <hr>
+        <p>Mansagem: {{ msg }}</p>
+        <br>
+        <hr>
+        <button @click.once="execUmaVez()">Botão</button>
+        <p>Cliques: {{ cliques }}</p>
+        <hr>
+        <form @submit.prevent.once="enviarForm()">
+            <button type="submit">Enviar</button>
+        </form>
+        <p>Mensagem Form: {{ form }}</p>
+        <hr>
+        <input type="text" @keyup.Shift.s="controlTeclas($event)">
+        <p>Teclas: {{ teclas }}</p> -->
+    </div>
+
+
+    <!-- <div id="app">
+        <div class="border div-main" :class="cor">
+          Cor:  {{ cor }}
+          <br>
+          Posição X: {{ positionX }}
+          <br>
+          Posição Y: {{ positionY }}
+        </div>
+        <hr>
+        <div @click="alterColor('green')" class="border div-aux"></div>
+        <div 
+            class="border div-aux" 
+            @mouseover="alterColor('blue')"
+            @mouseout="alterColor('red')"
+        >
+    </div>
+        <div class="border div-aux" @mousemove="coordenadas($event)"></div> -->
+
+        <!-- <h1 :style="classCorH1">Teste de cor v-bind</h1>
+    <input type="text" :value="value">
+    <input type="checkbox" :checked="check">
+    <button @click="msg($event)">Botão de alert</button> <br>
+    <input type="text" @keyup="textConsole"> -->
+
+    <!-- {{ mensagem }}<br>
+    Numero: {{number}} <br>
+    logado: {{logado}}<br>
+    Perfil: {{perfil.nome}}<br>
+    Cursos: {{cursos}} -->
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                // msg: '',
+                // cliques: 0,
+                // form: '',
+                // teclas: ''
+                // cor: "Branco",
+                // positionX: 0,
+                // positionY: 0
+            //     mensagem: "Teste de mensagem app Vue",
+            //     number: 123654987,
+            //     logado: true,
+            //     hobbies: [
+            //         "Estudar",
+            //         "Dormir",
+            //         "Viajar",
+            //         "Ler livros"
+            //     ],
+            //     perfil: {
+            //         nome: "Isaac Oliveira",
+            //         Idade: 42,
+            //         sexo: "Masculino",
+            //         profissao: "Analista de sistemas"
+            //     },
+            //     cursos: 
+            //     [
+            //         {
+            //             nome: "PHP Laravel", 
+            //             caragaHoraria: "120 horas"
+            //         },
+            //         {
+            //             nome: "Vue",
+            //             caragaHoraria: "80 horas"
+            //         }
+            //     ]
+            },
+            methods: {
+                clickButton() {
+                    console.log(opcoes.value)
+                }
+                // previnirComportamentoPadrao() {
+                //     this.msg = "Mensagem de clique no método !!!"
+                // },
+                // execUmaVez() {
+                //     this.cliques++
+                // },
+                // enviarForm() {
+                //     this.form = 'Prevenindo o comportamento no form !!!!'
+                // },
+                // controlTeclas(event) {
+                //     this.teclas = 'Modificador utilizado com sucesso !!!' 
+                // }
+
+            //     alterColor(color) {
+            //         this.cor = color
+            //     },
+            //     coordenadas(ev) {
+            //         this.positionX = ev.clientX,
+            //         this.positionY = ev.clientY
+            //     }
+            }
+        });
+    </script>
+</body>
+</html>

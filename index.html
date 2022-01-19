@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Vue JS Home</title>
+
+    <style>
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .border {
+            border: 1px solid ;
+        }
+
+        .div-main {
+            width: 200px;
+            height: 200px;
+        }
+
+        .div-aux {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="app">
+       <button @click="exibirSaldo = !exibirSaldo">
+         <span v-if="!exibirSaldo">Exibir Saldo</span>
+         <span v-if="exibirSaldo">Ocultar Saldo</span>
+        </button>
+       <p>Saldo: <span v-if="exibirSaldo">R$ {{ saldo }}</span></p>
+       <br>
+       <hr>
+       Programa para verificar se é maior de Idade
+       <br>
+       Idade: <input type="text" id="idadeInput" @blur="setIdade()">
+       <p v-if="idade ==''">Digite sua idade:</p>
+       <p v-else-if="idade < 18">A idade: {{ idade }} é MENOR de idade</p>
+       <p v-else>A idade: {{ idade }} é MAIOR de idade</p>
+       <br>
+       <hr>
+       <br>
+       Nota do Aluno: <input type="text" id="notaInput" @blur="setNota()"><br>
+       <p v-if="notaAluno ==''">Digite a nota do Aluno:</p>
+       <p v-else-if="notaAluno >= 7 && notaAluno <= 10">Aluno Aprovado</p>
+       <p v-else-if="notaAluno >= 5 && notaAluno <= 7">Aluno em <span style="color: blue;"> RECUPERAÇÂO </span></p>
+       <p v-else-if="notaAluno >= 0 &&  notaAluno < 5">Aluno <span style="color: red;"> REPROVADO </span></p>
+       <p v-else>Digite uma nota válida</p>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                saldo: 12500,
+                exibirSaldo: true,
+                idade: 0,
+                notaAluno: 0
+            },
+            methods: {
+                setIdade() {
+                    this.idade = idadeInput.value
+                },
+                setNota() {
+                   this.notaAluno = notaInput.value
+                }
+            }
+        });
+    </script>
+</body>
+</html>
